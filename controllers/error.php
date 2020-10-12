@@ -1,10 +1,13 @@
 <?php
 
-class Error_404{
+class Error_ extends Controller_{
 
     function __construct(){
-        echo "<p>Error al cargar el recurso</p>";
+        parent::__construct();
+        $this->view->render('error/index');
     }
+
+    
 }
 
 ?>

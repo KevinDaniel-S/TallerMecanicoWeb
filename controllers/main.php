@@ -1,11 +1,12 @@
 <?php
 
-class Main{
+class Main extends Controller_{
     function __construct(){
-        echo "<p>Nuevo controlador Main</p>";
+        parent::__construct();
+        $this->view->render('main/index');
     }
 
     function saludo(){
-        echo "<p>Hola</p>";
+        echo "<p>Método Saludo</p>";
     }
 }
