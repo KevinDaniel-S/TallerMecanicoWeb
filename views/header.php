@@ -13,10 +13,10 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <ul class="navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="#">Taller</a>
+      <a class="nav-link" href="/">Taller</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Nuevo Cliente</a>
+      <a class="nav-link" href="/nuevoCliente">Nuevo Cliente</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Registro vehículo</a>
