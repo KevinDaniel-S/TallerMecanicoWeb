@@ -7,9 +7,15 @@ class nuevoCliente extends Controller_{
     }
 
     function registrar(){
-        echo "Alumno creado";
-        $this->model->insert();
-     
+        $DNI = $_POST['DNI'];
+        $Nombre = $_POST['Nombre'];
+        $Apellido = $_POST['Apellido'];
+        $Direccion = $_POST['Direccion'];
+        $Telefono = $_POST['Telefono'];
+
+        $this->model->insert(['DNI'=>$DNI, 'Nombre'=>$Nombre,
+                              'Apellido'=>$Apellido, 'Direccion'=>$Direccion,
+                              'Telefono'=>$Telefono]);
     }
 
 

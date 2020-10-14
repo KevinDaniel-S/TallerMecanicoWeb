@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
 <ul class="navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="/">Taller</a>
@@ -29,3 +29,4 @@
     </li>
   </ul>
 </nav>
+<div style="padding:5% 7%">

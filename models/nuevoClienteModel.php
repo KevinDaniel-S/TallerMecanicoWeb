@@ -6,7 +6,10 @@ class nuevoClienteModel extends Model_{
         parent::__construct();
     }
 
-    public function insert(){
-        echo "<br>Insertar datos</br>";
+    public function insert($datos){
+        $query = $this->db->connect()->prepare('INSERT INTO Cliente (DNI, Nombre, Apellido, Dirección, Teléfono) VALUES (:DNI, :Nombre, :Apellido, :Direccion, :Telefono)');
+        $query->execute(['DNI'=>$datos['DNI'], 'Nombre'=>$datos['Nombre'],
+                         'Apellido'=>$datos['Apellido'], 'Direccion'=>$datos['Direccion'],
+                         'Telefono'=>$datos['Telefono']]);
     }
 }

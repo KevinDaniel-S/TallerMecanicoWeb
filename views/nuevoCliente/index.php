@@ -1,23 +1,34 @@
 <?php require_once 'views/header.php';?>
 
 <h1>Registrar nuevo cliente</h1>
-<div style="padding:3% 7%">
-<form action="<?php echo constant('URL'); ?>nuevoCliente/registrar" method="POST">
-    <div class="form-group">
-        <label for="Nombre">Nombre</label>
-        <input type="text" class="form-control" id="Nombre"
-        placeholder="Introduzca nombre">
-    </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<form action="<?php echo constant('URL');?>nuevoCliente/registrar" method="POST">
+<div class="form-group">
+      <label for="DNI">DNI</label>
+      <input type="text" class="form-control" id="DNI" name="DNI"
+      placeholder="Introduzca DNI" required>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <label for="Nombre">Nombre</label>
+      <input type="text" class="form-control" id="Nombre" name="Nombre"
+      placeholder="Introduzca nombre" required>
+  </div>
+  <div class="form-group">
+    <label for="Apellido">Apellidos</label>
+    <input type="text" class="form-control" id="Apellido" name="Apellido"
+    placeholder="Introduzca apellido" required>
+  </div>
+  <div class="form-group">
+    <label for="Direccion">Dirección</label>
+    <input type="text" class="form-control" id="Direccion" name="Direccion"
+    placeholder="Introduzca la dirección" required>
+  </div>
+  <div class="form-group">
+    <label for="Telefono">Telefono</label>
+    <input type="tel" class="form-control" id="Telefono" name="Telefono"
+    placeholder="Introduzca el telefono" required>
   </div>
   <button type="submit" class="btn btn-primary">Registrar cliente</button>
 </form>
-</div>
+
 <?php require_once 'views/footer.php';?>
+
