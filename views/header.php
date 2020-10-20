@@ -19,7 +19,7 @@
       <a class="nav-link" href="/nuevoCliente">Nuevo Cliente</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Registro vehículo</a>
+      <a class="nav-link" href="/registroVehiculo">Registro vehículo</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Modificar servicio</a>
