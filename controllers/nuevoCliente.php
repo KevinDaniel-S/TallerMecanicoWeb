@@ -4,7 +4,6 @@ class nuevoCliente extends Controller_{
     function __construct(){
         parent::__construct();
         $this->view->mensaje = "";
-        $this->view->error = false;
     }
 
     function render(){
@@ -29,9 +28,6 @@ class nuevoCliente extends Controller_{
 
         
         $this->render();
-
-
-        
     }
 
 

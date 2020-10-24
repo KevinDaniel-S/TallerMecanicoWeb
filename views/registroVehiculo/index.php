@@ -6,11 +6,16 @@
     <div class="form-group">
       <label for="Cliente">Cliente</label>
       <select class="form-control" id="Cliente" name="Cliente" required>
-        <option selected disabled hidden>Cliente</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option selected disabled hidden>Seleccionar cliente</option>
+        <?php 
+            include_once "models/cliente.php";
+              foreach ($this->datos as $row) {
+              $cliente = new Cliente();
+              $cliente = $row;
+              
+              echo "<option value=\"".$cliente->DNI."\">".$cliente->Nombre." ". $cliente->Apellido."</option>";
+            }  
+        ?>
       </select>
     </div>
     <div class="form-group">
