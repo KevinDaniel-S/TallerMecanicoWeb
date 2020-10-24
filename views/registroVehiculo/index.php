@@ -2,7 +2,9 @@
 
 <h1>Registro vehículo</h1>
 
-<form action="" method="post">
+<div class="text-center text-danger"><?php echo $this->mensaje; ?></div>
+
+<form action="<?php echo constant('URL');?>registroVehiculo/registrar" method="POST">
     <div class="form-group">
       <label for="Cliente">Cliente</label>
       <select class="form-control" id="Cliente" name="Cliente" required>

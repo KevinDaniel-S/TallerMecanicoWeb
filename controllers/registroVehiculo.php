@@ -27,7 +27,15 @@ class registroVehiculo extends Controller_{
         $Modelo = $_POST['Modelo'];
         $Color = $_POST['Color'];
 
-        
+        try {
+            $this->model->insert(['Cliente' => $Cliente, 'Matricula' => $Matricula,
+                                  'Modelo' => $Modelo, 'Color' => $Color]);
+            $this->view->mensaje = "Vehículo agregado correctamente";
+        } catch (Exception $e) {
+            $this->view->mensaje = $e->getMessage();
+        }
+
+        $this->render();
     }
 
 }
