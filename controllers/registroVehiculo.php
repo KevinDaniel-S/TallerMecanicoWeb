@@ -13,14 +13,6 @@ class registroVehiculo extends Controller_{
         $this->view->render("registroVehiculo/index");
     }
 
-    function getClients(){
-        try {
-            $clients = $this->model->select();
-        } catch (Exception $e) {
-            $this->view->mensaje = $e->getMessage();
-        }
-    }
-
     function registrar(){
         $Cliente = $_POST['Cliente'];
         $Matricula = $_POST['Matricula'];
