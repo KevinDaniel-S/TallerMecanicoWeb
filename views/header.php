@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
 <ul class="navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="/admin">Admin</a>
+      <a class="navbar-brand" href="/admin">Ir a Admin</a>
     </li>
     <li class="nav-item active">
       <a class="nav-link" href="/nuevoCliente">Nuevo Cliente</a>

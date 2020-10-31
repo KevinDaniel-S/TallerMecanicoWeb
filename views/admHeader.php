@@ -12,17 +12,17 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="/">Taller</a>
+        <a class="navbar-brand" href="/">Ir a Taller</a>
     </div>
     <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Registro empleado</a>
+          <a class="nav-link" href="/registroEmpleado">Registro empleado</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#">Empleados</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Registro producto</a>
+          <a class="nav-link" href="/registroProducto">Registro producto</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#">Inventario</a>

@@ -1,11 +1,11 @@
 <?php
 
-class Admin extends Controller_{
+class RegistroEmpleado extends Controller_{
     function __construct(){
         parent::__construct();
     }
 
     function render(){
-        $this->view->render('admin/index');
+        $this->view->render('registroEmpleado/index');
     }
 }
