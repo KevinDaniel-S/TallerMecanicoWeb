@@ -1,12 +1,12 @@
 <?php
 
-class Main extends Controller_{
+class Admin extends Controller_{
     function __construct(){
         parent::__construct();
         
     }
 
     function render(){
-        $this->view->render('main/index');
+        $this->view->render('admin/index');
     }
 }

@@ -13,18 +13,18 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
 <ul class="navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="/">Taller</a>
+      <a class="nav-link" href="/admin">Admin</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link" href="/nuevoCliente">Nuevo Cliente</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link" href="/registroVehiculo">Registro vehículo</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link" href="#">Modificar servicio</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link" href="#">Liberar vehículo</a>
     </li>
   </ul>
