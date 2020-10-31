@@ -19,13 +19,13 @@
           <a class="nav-link" href="/registroEmpleado">Registro empleado</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Empleados</a>
+          <a class="nav-link" href="/empleados">Empleados</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/registroProducto">Registro producto</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inventario</a>
+          <a class="nav-link" href="/inventario">Inventario</a>
         </li>
     </ul>
 </nav>
