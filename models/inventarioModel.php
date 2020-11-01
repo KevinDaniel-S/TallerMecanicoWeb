@@ -11,9 +11,10 @@ class inventarioModel extends Model_{
     public function select(){
         $items = [];
         try {
-            $query = $this->db->connect()->query('SELECT Nombre, Precio FROM Refacciones');
+            $query = $this->db->connect()->query('SELECT Codigo_R, Nombre, Precio FROM Refacciones');
             while($row = $query->fetch()){
                 $item = new Producto();
+                $item->id = $row['Codigo_R'];
                 $item->Nombre   = $row['Nombre'];
                 $item->Precio = $row['Precio'];
                 array_push($items, $item);

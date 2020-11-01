@@ -13,4 +13,15 @@ class Inventario extends Controller_{
         $this->view->render('inventario/index');
     }
 
+    function verProducto(){
+
+    }
+
+    function editarProducto(){
+
+    }
+
+    function eliminarProducto(){
+        
+    }
 }

@@ -7,6 +7,7 @@
 <table class="table table-hover table-striped table-bordered">
     <thead class="thead-dark">
       <tr>
+        <th>id</th>
         <th>Nombre</th>
         <th>Precio</th>
         <th></th>
@@ -19,9 +20,10 @@
               foreach ($this->datos as $row) {
               $producto = new Producto();
               $producto = $row;
-              echo "<tr><td>".$producto->Nombre."</td>";
+              echo "<tr><td>".$producto->id."</td>";
+              echo "<td>".$producto->Nombre."</td>";
               echo "<td>$".$producto->Precio."</td>";
-              echo "<td><a href='#'>editar</a></td>";
+              echo "<td><a href=".constant('URL')."inventario/verProducto/1>editar</a></td>";
               echo "<td><a href='#'>eliminar</a></td></tr>";
             }  
         ?>

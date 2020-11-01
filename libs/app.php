@@ -3,48 +3,43 @@
 require_once 'controllers/error.php';
 
 class App{
-    
-    function __construct(){
 
-        $url = isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] : null;
-        
+    function __construct(){
+        //echo "<p>Nueva app</p>";
+
+        $url = isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] : null; 
         $url = rtrim($url, '/');
         $url = explode('/', $url);
         array_shift($url);
-        
+
+        // cuando se ingresa sin definir controlador
         if(empty($url[0])){
             $archivoController = 'controllers/main.php';
             require_once $archivoController;
-            $controller = new Main;
+            $controller = new Main();
+            $controller->loadModel('main');
             $controller->render();
             return false;
         }
-       
-        $archivoController = 'controllers/' .$url[0] . '.php'; 
+        $archivoController = 'controllers/' . $url[0] . '.php';
+
         if(file_exists($archivoController)){
-            require_once $archivoController; 
+            require_once $archivoController;
+
+            // inicializar controlador
             $controller = new $url[0];
             $controller->loadModel($url[0]);
-            
-            if(count($url)>1){
-                if(method_exists($controller ,$url[1])){
-                    $controller->{$url[1]}();
-                    if(count($url)>2){
-                        $controller = new Error_; 
-                    } 
-                }else{
-                    $controller = new Error_;    
-                }
-                 
+
+            // si hay un método que se requiere cargar
+            if(isset($url[1])){
+                $controller->{$url[1]}();
             }else{
                 $controller->render();
             }
-                
-
         }else{
-            $controller = new Error_;
+            $controller = new Error_();
         }
-        
     }
 }
+
 ?>
