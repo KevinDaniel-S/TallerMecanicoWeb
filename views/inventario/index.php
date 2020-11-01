@@ -16,17 +16,22 @@
     </thead>
     <tbody>
         <?php 
-            include_once "models/cliente.php";
-              foreach ($this->datos as $row) {
-              $producto = new Producto();
-              $producto = $row;
-              echo "<tr><td>".$producto->id."</td>";
-              echo "<td>".$producto->Nombre."</td>";
-              echo "<td>$".$producto->Precio."</td>";
-              echo "<td><a href=".constant('URL')."inventario/verProducto/1>editar</a></td>";
-              echo "<td><a href='#'>eliminar</a></td></tr>";
-            }  
+          include_once "models/cliente.php";
+          foreach ($this->datos as $row) {
+            $producto = new Producto();
+            $producto = $row;
         ?>
+            <tr>
+              <td><?php echo $producto->id; ?></td>
+              <td><?php echo $producto->Nombre; ?></td>
+              <td><?php echo "$".$producto->Precio; ?></td>
+              <td>
+                <a href="<?php echo constant('URL')."inventario/verProducto/".$producto->id;?>">editar</a>
+              </td>
+              <td>
+                <a href="<?php echo constant('URL')."inventario/eliminarProducto/".$producto->id;?>">eliminar</a>
+              </td>
+          <?php } ?>
     </tbody>
   </table>
 <?php require_once "views/footer.php";?>

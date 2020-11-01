@@ -24,4 +24,42 @@ class inventarioModel extends Model_{
             return [];
         }
     }
+
+    public function selectById($id){
+        $item = new Producto;
+
+        try {
+            $query = $this->db->connect()->prepare("SELECT * FROM Refacciones WHERE Codigo_R=:id");
+            $query->execute(['id'=>$id]);
+            while($row = $query->fetch()){
+                $item->id = $row['Codigo_R'];
+                $item->Nombre   = $row['Nombre'];
+                $item->Precio = $row['Precio'];
+            }
+            return $item;
+        } catch (Exception $e) {
+            return [];
+        }
+    }
+
+    public function update($item){
+        try {
+            $query = $this->db->connect()->prepare("UPDATE Refacciones SET nombre = :nombre, precio = :precio WHERE Codigo_R = :id");
+            $query->execute(['id'=>$item['id'], 
+                             'nombre'=>$item['nombre'],
+                             'precio'=>$item['precio']]);
+        } catch (Exception $e) {
+            //throw $th;
+        }
+    }
+
+    public function delete($id){
+        try {
+            $query = $this->db->connect()->prepare("DELETE FROM Refacciones WHERE Codigo_R = :id");
+            $query->execute(['id'=>$id]);
+            return True;
+        } catch (Exception $e) {
+            return False;
+        }
+    }
 }
