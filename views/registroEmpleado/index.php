@@ -2,34 +2,38 @@
 
 <h1>Registrar empleado</h1>
 
-<form action="#" method="POST">
+<div class="text-center text-danger"><?php echo $this->mensaje; ?></div>
+
+<form action="<?php echo constant('URL'); ?>registroEmpleado/registrar" method="POST">
   <div class="form-group">
-    <label for="Nombre">Nombre</label>
-    <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Introduzca nombre" required>
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduzca nombre" required>
   </div>
   <div class="form-group">
-    <label for="Apellido">Apellidos</label>
-    <input type="text" class="form-control" id="Apellido" name="Apellido" placeholder="Introduzca apellido" required>
+    <label for="apellidos">Apellidos</label>
+    <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Introduzca apellidos" required>
   </div>
   <div class="form-group">
-    <label for="Direccion">Dirección</label>
-    <input type="text" class="form-control" id="Direccion" name="Direccion" placeholder="Introduzca la dirección" required>
+    <label for="direccion">Dirección</label>
+    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Introduzca la dirección" required>
   </div>
   <div class="form-group">
-    <label for="Telefono">Telefono</label>
-    <input type="tel" class="form-control" id="Telefono" name="Telefono" placeholder="Introduzca el telefono" required>
+    <label for="telefono">Teléfono</label>
+    <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Introduzca el telefono" required>
   </div>
   <div class="form-group">
     <label for="email">Correo</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="Introduzca el correo electrónico" required>
+    <input type="email" class="form-control" id="email" name="email" 
+      placeholder="Introduzca el correo electrónico" required>
   </div>
   <div class="form-group">
-    <label for="Telefono">Usuario</label>
-    <input type="tel" class="form-control" id="Telefono" name="Telefono" placeholder="Introduzca el telefono" required>
-  </div>
-  <div class="form-group">
-    <label for="password">Contraseña</label>
-    <input type="password" class="form-control" id="password" name="password" placeholder="Introduzca la contraseña" required>
+    <label for="puesto">Puesto</label>
+    <select class="form-control" id="puesto" name="puesto" required>
+      <option selected disabled hidden>Seleccionar puesto</option>
+      <option value="administrativo">Administrativo</option>
+      <option value="ayudante">Ayudante mecánico</option>
+      <option value="jefe mecanico">Jefe mecánico</option>
+    </select>
   </div>
   <button type="submit" class="btn btn-primary">Registrar empleado</button>
 </form>
