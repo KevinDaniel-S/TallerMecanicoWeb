@@ -8,8 +8,8 @@ class Inventario extends Controller_{
     }
 
     function render(){
-        $clientes = $this->model->select();
-        $this->view->datos = $clientes;
+        $productos = $this->model->select();
+        $this->view->datos = $productos;
         $this->view->render('inventario/index');
     }
 

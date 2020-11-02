@@ -30,9 +30,9 @@
     <label for="puesto">Puesto</label>
     <select class="form-control" id="puesto" name="puesto" required>
       <option selected disabled hidden>Seleccionar puesto</option>
-      <option value="administrativo">Administrativo</option>
-      <option value="ayudante">Ayudante mecánico</option>
-      <option value="jefe mecanico">Jefe mecánico</option>
+      <option value="Administrativo">Administrativo</option>
+      <option value="Ayudante">Ayudante mecánico</option>
+      <option value="Jefe mecanico">Jefe mecánico</option>
     </select>
   </div>
   <button type="submit" class="btn btn-primary">Registrar empleado</button>

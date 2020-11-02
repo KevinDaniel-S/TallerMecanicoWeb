@@ -16,7 +16,7 @@
     </thead>
     <tbody>
         <?php 
-          include_once "models/cliente.php";
+          include_once "models/producto.php";
           foreach ($this->datos as $row) {
             $producto = new Producto();
             $producto = $row;
@@ -34,4 +34,5 @@
           <?php } ?>
     </tbody>
   </table>
+
 <?php require_once "views/footer.php";?>
