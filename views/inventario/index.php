@@ -31,6 +31,7 @@
               <td>
                 <a href="<?php echo constant('URL')."inventario/eliminarProducto/".$producto->id;?>">eliminar</a>
               </td>
+            </tr>
           <?php } ?>
     </tbody>
   </table>

@@ -22,10 +22,10 @@
       <a class="nav-link" href="/registroVehiculo">Registro vehículo</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="#">Modificar servicio</a>
+      <a class="nav-link" href="/iniciarServicio">Iniciar servicio</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="#">Liberar vehículo</a>
+      <a class="nav-link" href="/servicios">Servicios</a>
     </li>
   </ul>
 </nav>
