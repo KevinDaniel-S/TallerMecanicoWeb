@@ -17,13 +17,31 @@ class servicios extends Controller_{
         $this->view->render('servicios/index');
     }
 
-    public function verServicio($param){
+    public function verMecanicos($param){
         $id = $param[0];
-        echo "Ver ".$id;
+        $this->view->id = $id;
+        $this->view->render('servicios/detalleMecanicos');
+    }
+
+    public function agregarMecanico($param){
+        
+    }
+
+    public function verRefacciones($param){
+        $id = $param[0];
+        $this->view->id = $id;
+        $this->view->render('servicios/detalleRefacciones');
+    }
+
+    public function agregarRefaccion($param){
+
     }
 
     public function liberarServicio($param){
         $id = $param[0];
-        echo "liberar ".$id;
+        $this->model->release($id);
+        $this->view->id = $id;
+        $this->render('servicios/index');
     }
+
 }

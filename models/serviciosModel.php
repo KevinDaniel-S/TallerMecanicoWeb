@@ -12,7 +12,7 @@ class serviciosModel extends Model_{
     public function select(){
         $items = [];
 
-        $query = $this->db->connect()->query("SELECT r.ID_Reparacion, CONCAT(c.Nombre, ' ' ,c.Apellido) as Propietario, v.Matricula, v.Modelo, v.Color, r.Fecha_Entrada FROM Reparacion r LEFT JOIN Vehiculo v ON r.FK_Matricula = v.Matricula LEFT JOIN Cliente c ON c.DNI = v.FK_DNI ");
+        $query = $this->db->connect()->query("SELECT r.ID_Reparacion, CONCAT(c.Nombre, ' ' ,c.Apellido) as Propietario, v.Matricula, v.Modelo, v.Color, r.Fecha_Entrada FROM Reparacion r LEFT JOIN Vehiculo v ON r.FK_Matricula = v.Matricula LEFT JOIN Cliente c ON c.DNI = v.FK_DNI WHERE Estado='Activo'");
         while($row = $query->fetch()){
             $item = new Servicio();
             $item->id = $row['ID_Reparacion'];
@@ -25,6 +25,12 @@ class serviciosModel extends Model_{
             array_push($items, $item);
         }
         return $items;
+    }
+
+    public function release($id){
+        $query = $this->db->connect()->prepare("UPDATE Reparacion SET Estado = 'Liberado' WHERE ID_Reparacion = :id");
+        $query->execute(['id' => $id]);
+
     }
 
 }

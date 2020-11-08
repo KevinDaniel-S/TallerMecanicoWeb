@@ -11,7 +11,7 @@ class empleadosModel extends Model_{
     public function select(){
         $items = [];
 
-        $query = $this->db->connect()->query('SELECT ID_Empleado, Nombre, Apellidos, Direccion, Telefono, Libre, Puesto, Correo FROM Empleado');
+        $query = $this->db->connect()->query('SELECT ID_Empleado, Nombre, Apellidos, Direccion, Telefono, Estado, Puesto, Correo FROM Empleado');
         while($row = $query->fetch()){
             $item = new Empleado();
             $item->id = $row['ID_Empleado'];
@@ -20,7 +20,7 @@ class empleadosModel extends Model_{
             $item->direccion = $row['Direccion'];
             $item->email = $row['Correo'];
             $item->telefono = $row['Telefono'];
-            $item->libre = $row['Libre'];
+            $item->libre = $row['Estado'];
             $item->puesto = $row['Puesto'];
             
             array_push($items, $item);
