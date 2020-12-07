@@ -1,6 +1,7 @@
 <?php
 
 include_once 'models/servicio.php';
+include_once 'models/empleado.php';
 
 class serviciosModel extends Model_{
     
@@ -32,5 +33,23 @@ class serviciosModel extends Model_{
         $query->execute(['id' => $id]);
 
     }
+    
+    public function selectMecanicos(){
+        $items = [];
+        $query = $this->db->connect()->query("SELECT ID_Empleado, Nombre, Apellidos FROM Empleado WHERE Estado='Libre'");
+        while($row = $query->fetch()){
+          $item = new Empleado();
+          $item->id = $row['ID_Empleado'];
+          $item->nombre = $row['Nombre'];
+          $item->apellidos = $row['Apellidos'];
+          array_push($items, $item);
+        }
+        return $items;
+    }
 
+    public function agregarMecanico($id, $idMecanico){
+      //$query1 = $this->db->connect()->prepare("UPDATE Empleado SET Estado='Ocupado' WHERE ID_Empleado = :id"));
+      //$query2 = $this->db->connect()->prepare();
+      echo $id." ".$idMecanico;
+    }
 }

@@ -19,8 +19,17 @@ class servicios extends Controller_{
 
     public function verMecanicos($param){
         $id = $param[0];
+        if(count($param)>2){
+          if($param[1]=="agregar"){
+            $idMecanico = $param[2];
+            $this->model->agregarMecanico($id, $idMecanico);
+          }
+        }
+        $mecanicos = $this->model->selectMecanicos();
+
+        $this->view->datos = $mecanicos;
         $this->view->id = $id;
-        $this->view->render('servicios/detalleMecanicos');
+        //$this->view->render('servicios/detalleMecanicos');
     }
 
     public function agregarMecanico($param){
