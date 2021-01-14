@@ -2,7 +2,7 @@
 
 <h1>Registro producto</h1>
 
-<form action="<?php echo constant('URL'); ?>registroProducto/registrar" method="POST">
+<form action="<?php echo constant('URL'); ?>/registroProducto/registrar" method="POST">
   <div class="form-group">
     <label for="Nombre">Nombre</label>
     <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Introduzca nombre" required>

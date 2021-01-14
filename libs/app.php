@@ -10,8 +10,11 @@ class App{
         $url = isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] : null; 
         $url = rtrim($url, '/');
         $url = explode('/', $url);
-        array_shift($url);
 
+        $url = array_slice($url, constant('PAR'));
+
+        array_shift($url);
+        
         // cuando se ingresa sin definir controlador
         if(empty($url[0])){
             $archivoController = 'controllers/main.php';

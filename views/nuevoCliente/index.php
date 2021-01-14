@@ -4,7 +4,7 @@
 
 <div class="text-center text-danger"><?php echo $this->mensaje; ?></div>
 
-<form action="<?php echo constant('URL'); ?>nuevoCliente/registrar" method="POST">
+<form action="<?php echo constant('URL'); ?>/nuevoCliente/registrar" method="POST">
   <div class="form-group">
     <label for="DNI">DNI</label>
     <input type="text" class="form-control" id="DNI" name="DNI" placeholder="Introduzca DNI" required>
