@@ -26,10 +26,10 @@
               <td><?php echo $producto->Nombre; ?></td>
               <td><?php echo "$".$producto->Precio; ?></td>
               <td>
-                <a href="<?php echo constant('URL')."inventario/verProducto/".$producto->id;?>">editar</a>
+                <a href="<?php echo constant('URL')."/inventario/verProducto/".$producto->id;?>">editar</a>
               </td>
               <td>
-                <a href="<?php echo constant('URL')."inventario/eliminarProducto/".$producto->id;?>">eliminar</a>
+                <a href="<?php echo constant('URL')."/inventario/eliminarProducto/".$producto->id;?>">eliminar</a>
               </td>
             </tr>
           <?php } ?>

@@ -32,9 +32,9 @@
             <td><?php echo $servicio->color; ?></td>
             <td><?php echo $servicio->modelo; ?></td>
             <td><?php echo $servicio->fechaEntrada; ?></td>
-            <td><a href="<?php echo constant('URL')."servicios/verMecanicos/".$servicio->id;?>">Mecánicos</a></td>
-            <td><a href="<?php echo constant('URL')."servicios/verRefacciones/".$servicio->id;?>">Refacciones</a></td>
-            <td><a href="<?php echo constant('URL')."servicios/liberarServicio/".$servicio->id;?>">Liberar</a></td>
+            <td><a href="<?php echo constant('URL')."/servicios/verMecanicos/".$servicio->id;?>">Mecánicos</a></td>
+            <td><a href="<?php echo constant('URL')."/servicios/verRefacciones/".$servicio->id;?>">Refacciones</a></td>
+            <td><a href="<?php echo constant('URL')."/servicios/liberarServicio/".$servicio->id;?>">Liberar</a></td>
         </tr>
         <?php } ?>
     </tbody>
