@@ -40,10 +40,13 @@ class servicios extends Controller_{
         $this->model->agregarRefaccion($id, $idRefaccion, $cantidad);
       }
         $this->view->id = $id;
-
+        
+        $refProyecto = $this->model->refaccionesProyecto($id);
         $refacciones = $this->model->selectRefacciones($id);
-
+        
+        
         $this->view->datos = $refacciones;
+        $this->view->refacciones = $refProyecto;
         $this->view->render('servicios/detalleRefacciones');
     }
 

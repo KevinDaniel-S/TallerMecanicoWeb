@@ -1,4 +1,5 @@
 <?php include_once 'views/header.php'; ?>
+<?php include_once 'models/refaccion.php'; ?>
 
 <div class="d-flex justify-content-center">
     <h2>Refacciones del servicio <?php echo $this->id; ?></h2>
@@ -53,25 +54,33 @@
                             <th>Cantidad</th>
                             <th>Precio unitario</th>
                             <th>Precio Total</th>
-                            <th></th>
                         </tr>
                     </thead>
+                    <?php $total = 0 ?>
+                    <tbody>
+                      <?php 
+                        foreach($this->refacciones as $row){
+                        $refaccion = new Refaccion();
+                        $refaccion = $row;
+                      ?>
+                      <tr>
+                        <td><?php echo $refaccion->id; ?></td>
+                        <td><?php echo $refaccion->nombre; ?></td>
+                        <td><?php echo $refaccion->cantidad; ?></td>
+                        <td><?php echo "$".$refaccion->precio; ?></td>
+                        <td>$<?php $price = (float)$refaccion->precio * (float)$refaccion->cantidad; 
+                                   $total += $price;
+                                    echo $price;?>
+                        </td>
+                      </tr>                         
+                    <?php } ?>
+                    </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="5" class="text-right">Total</td>
-                            <td>$50</td>
+                            <td colspan="4" class="text-right">Total</td>
+                            <td>$<?php echo $total; ?></td>
                         </tr>
                     </tfoot>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
                 </table>
             </div>
         </div>

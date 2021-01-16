@@ -102,6 +102,21 @@ class serviciosModel extends Model_{
     }
 
     public function refaccionesProyecto($id){
-
+        $items = [];
+        $query = $this->db->connect()->prepare("SELECT r.Codigo_R, r.Nombre, hp.Cantidad, r.Precio 
+                                                FROM Hoja_Parte hp 
+                                                JOIN Refacciones r
+                                                  ON r.Codigo_R = hp.FK_Refaccion 
+                                                WHERE hp.FK_Reparacion = :id");
+        $query->execute(['id'=>$id]);
+        while($row = $query->fetch()){
+          $item = new Refaccion();
+          $item->id = $row['Codigo_R'];
+          $item->nombre = $row['Nombre'];
+          $item->cantidad = $row['Cantidad'];
+          $item->precio = $row['Precio'];
+          array_push($items, $item);
+        }
+        return $items;
     }
 }
