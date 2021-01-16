@@ -26,7 +26,7 @@
             <td><?php echo $servicio->color; ?></td>
             <td><?php echo $servicio->modelo; ?></td>
             <td><?php echo $servicio->propietario; ?></td>
-            <td><a href="<?php echo constant('URL')."iniciarServicio/iniciar/".$servicio->matricula;?>">Iniciar</a></td>
+            <td><a href="<?php echo constant('URL')."/iniciarServicio/iniciar/".$servicio->matricula;?>">Iniciar</a></td>
         </tr>
         <?php } ?>
     </tbody>

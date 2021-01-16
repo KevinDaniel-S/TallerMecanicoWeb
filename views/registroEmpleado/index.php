@@ -4,7 +4,7 @@
 
 <div class="text-center text-danger"><?php echo $this->mensaje; ?></div>
 
-<form action="<?php echo constant('URL'); ?>registroEmpleado/registrar" method="POST">
+<form action="<?php echo constant('URL'); ?>/registroEmpleado/registrar" method="POST">
   <div class="form-group">
     <label for="nombre">Nombre</label>
     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduzca nombre" required>

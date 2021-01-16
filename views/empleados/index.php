@@ -34,10 +34,10 @@
               <td><?php echo $empleado->puesto; ?></td>
               <td><?php echo $empleado->libre; ?></td>
               <td>
-                <a href="<?php echo constant('URL')."empleados/verEmpleado/".$empleado->id;?>">editar</a>
+                <a href="<?php echo constant('URL')."/empleados/verEmpleado/".$empleado->id;?>">editar</a>
               </td>
               <td>
-                <a href="<?php echo constant('URL')."empleados/eliminarEmpleado/".$empleado->id;?>">eliminar</a>
+                <a href="<?php echo constant('URL')."/empleados/eliminarEmpleado/".$empleado->id;?>">eliminar</a>
               </td>
           <?php } ?>
     </tbody>

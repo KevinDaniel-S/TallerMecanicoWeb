@@ -4,7 +4,7 @@
 
 <?php echo $this->mensaje;?>
 
-<form action="<?php echo constant('URL'); ?>inventario/editarProducto" method="POST">
+<form action="<?php echo constant('URL'); ?>/inventario/editarProducto" method="POST">
   <div class="form-group">
     <label for="Nombre">Nombre</label>
     <input type="text" class="form-control" id="Nombre" name="Nombre"
