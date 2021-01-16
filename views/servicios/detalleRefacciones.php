@@ -4,7 +4,6 @@
     <h2>Refacciones del servicio <?php echo $this->id; ?></h2>
     
 </div>
-
 <div class="container">
     <br>    
     <div class="row">
@@ -19,9 +18,16 @@
                 <form class="form-inline" action="#">
                     <div class="form-group">
                         <label for="nombre">Refacción:  </label>
-                        <select class="form-control" name="nombre" id="nombre">
-                            <option value="">Refacción 1</option>
-                            <option value="">Refacción 2</option>
+                        <select class="form-control" name="refaccion" id="">
+                          <?php                             
+                            foreach($this->datos as $row){
+                              $refaccion = new Refaccion();
+                              $refaccion = $row;
+                          ?>
+                            <option value="<?php echo $refaccion->id; ?>">
+                              <?php echo $refaccion->nombre; ?>
+                            </option>
+                          <?php  }?> 
                         </select>
                     </div>
                     <div class="form-group">

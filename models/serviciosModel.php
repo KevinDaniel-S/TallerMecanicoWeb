@@ -30,8 +30,9 @@ class serviciosModel extends Model_{
     }
 
     public function release($id){
-        $query = $this->db->connect()->prepare("UPDATE Reparacion SET Estado = 'Liberado' WHERE ID_Reparacion = :id");
-        $query->execute(['id' => $id]);
+        //$query = $this->db->connect()->prepare("UPDATE Reparacion SET Estado = 'Liberado' WHERE ID_Reparacion = :id");
+        //$query->execute(['id' => $id]);
+        echo "release ".$id;
 
     }
     
@@ -48,9 +49,22 @@ class serviciosModel extends Model_{
         return $items;
     }
 
-    public function selectRefaccion($id){
+    public function selectRefacciones($id){
       $items = [];
-      $query = $this->db->connect()->query("");
+      $query = $this->db->connect()->prepare("SELECT r.Codigo_R, r.Nombre 
+        FROM Refacciones r 
+        WHERE r.Codigo_R NOT IN 
+          (SELECT hp.FK_Refaccion 
+           FROM Hoja_Parte hp 
+           WHERE hp.FK_Reparacion = :id)");
+      $query->execute(['id'=>$id]);
+      while($row = $query->fetch()){
+          $item = new Refaccion();
+          $item->id = $row['Codigo_R'];
+          $item->nombre = $row['Nombre'];
+          array_push($items, $item);
+        }
+      return $items;
     }
 
     public function agregarMecanico($id, $idMecanico){
@@ -81,5 +95,9 @@ class serviciosModel extends Model_{
           array_push($items, $item);
         }
         return $items;
+    }
+
+    public function refaccionesProyecto($id){
+
     }
 }
