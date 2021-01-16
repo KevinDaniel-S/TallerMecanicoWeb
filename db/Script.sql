@@ -37,6 +37,7 @@ CREATE TABLE Hoja_Parte(
 	Codigo_H INT AUTO_INCREMENT,
 	FK_Refaccion INT,
 	FK_Reparacion INT,
+        Cantidad INT,
 	PRIMARY KEY(Codigo_H),
 	FOREIGN KEY(FK_Refaccion) REFERENCES Refacciones(Codigo_R),
 	FOREIGN KEY(FK_Reparacion) REFERENCES Reparacion(ID_Reparacion)	
