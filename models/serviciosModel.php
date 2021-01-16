@@ -2,6 +2,7 @@
 
 include_once 'models/servicio.php';
 include_once 'models/empleado.php';
+include_once 'models/refaccion.php';
 
 class serviciosModel extends Model_{
     
@@ -47,9 +48,21 @@ class serviciosModel extends Model_{
         return $items;
     }
 
+    public function selectRefaccion($id){
+      $items = [];
+      $query = $this->db->connect()->query("");
+    }
+
     public function agregarMecanico($id, $idMecanico){
-      //$query1 = $this->db->connect()->prepare("UPDATE Empleado SET Estado='Ocupado' WHERE ID_Empleado = :id"));
-      //$query2 = $this->db->connect()->prepare();
-      echo $id." ".$idMecanico;
+      $query1 = $this->db->connect()->prepare("UPDATE Empleado SET Estado='Ocupado' WHERE ID_Empleado = :idMecanico");
+      $query1->execute(['idMecanico'=>$idMecanico]);
+      $query2 = $this->db->connect()->prepare("INSERT INTO Mecanicos_Proyecto (FK_Mecanico, FK_Reparacion) VALUES (:idMecanico, :id)");
+      $query2->execute(['idMecanico'=>$idMecanico,
+                        'id'=>$id]);
+    }
+
+    public function agregarRefaccion($id, $idRefaccion){
+
+      echo $id." ".$idRefaccion;
     }
 }
