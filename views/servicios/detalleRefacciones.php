@@ -8,9 +8,9 @@
 <div class="container">
     <br>    
     <div class="row">
-        <!--Mecánicos -->
+        <!--Refacciones -->
         <div class="col">
-            <!-- Agregar Mecánico -->
+            <!-- Agregar Refacción -->
             <div class="row d-flex justify-content-center">
                 <h5> Agregar Refacción </h5>
             </div>

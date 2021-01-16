@@ -16,19 +16,22 @@
             </div>
             <br>
             <div class="row d-flex justify-content-center">
-                <form class="form-inline" action="#" method="POST">
+                <form class="form-inline" 
+                  action="#" method="POST">
                     <div class="form-group">
                         <label for="nombre">Mecánico</label>
                         <select class="form-control" name="mecanico" id="">
-<?php 
-  include_once 'models/empleado.php';
-  foreach($this->datos as $row){
-    $empleado = new Empleado();
-    $empleado = $row;
-?>
-  <option value="<?php echo $empleado->id; ?>"><?php echo $empleado->nombre." ".$empleado->apellidos; ?></option>
-<?php  }?>                        
-</select>
+                          <?php 
+                            include_once 'models/empleado.php';
+                            foreach($this->datos as $row){
+                              $empleado = new Empleado();
+                              $empleado = $row;
+                          ?>
+                            <option value="<?php echo $empleado->id; ?>">
+                              <?php echo $empleado->nombre." ".$empleado->apellidos; ?>
+                            </option>
+                          <?php  }?>                        
+                          </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar</button>
                 </form>
