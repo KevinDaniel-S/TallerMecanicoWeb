@@ -33,7 +33,12 @@ class servicios extends Controller_{
     }
 
     public function verRefacciones($param){
-        $id = $param[0];
+      $id = $param[0];
+      if(isset($_POST['refaccion'])){
+        $idRefaccion = $_POST['refaccion'];
+        $cantidad = $_POST['cantidad'];
+        $this->model->agregarRefaccion($id, $idRefaccion, $cantidad);
+      }
         $this->view->id = $id;
 
         $refacciones = $this->model->selectRefacciones($id);

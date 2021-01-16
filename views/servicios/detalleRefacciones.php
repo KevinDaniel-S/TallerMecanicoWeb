@@ -15,7 +15,7 @@
             </div>
             <br>
             <div class="row d-flex justify-content-center">
-                <form class="form-inline" action="#">
+                <form class="form-inline" action="#" method="POST">
                     <div class="form-group">
                         <label for="nombre">Refacción:  </label>
                         <select class="form-control" name="refaccion" id="">

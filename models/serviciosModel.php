@@ -75,9 +75,13 @@ class serviciosModel extends Model_{
                         'id'=>$id]);
     }
 
-    public function agregarRefaccion($id, $idRefaccion){
-
-      echo $id." ".$idRefaccion;
+    public function agregarRefaccion($id, $idRefaccion, $cantidad){
+      $query = $this->db->connect()->prepare("INSERT INTO Hoja_Parte (FK_Reparacion, FK_Refaccion, Cantidad) 
+                                                              VALUES (:id, :idRefaccion, :cantidad)");
+      $query->execute(['id'=>$id,
+                       'idRefaccion'=>$idRefaccion,
+                       'cantidad'=>$cantidad]);
+      echo $id." ".$idRefaccion." ".$cantidad;
     }
 
     public function mecanicosProyecto($id){
