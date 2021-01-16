@@ -37,8 +37,6 @@ CREATE TABLE Hoja_Parte(
 	Codigo_H INT AUTO_INCREMENT,
 	FK_Refaccion INT,
 	FK_Reparacion INT,
-	Precio_Unitario DECIMAL(6,2),
-	Precio_Total DECIMAL(6,2),
 	PRIMARY KEY(Codigo_H),
 	FOREIGN KEY(FK_Refaccion) REFERENCES Refacciones(Codigo_R),
 	FOREIGN KEY(FK_Reparacion) REFERENCES Reparacion(ID_Reparacion)	
