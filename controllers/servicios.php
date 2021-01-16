@@ -23,10 +23,11 @@ class servicios extends Controller_{
         $idMecanico = $_POST['mecanico'];
         $this->model->agregarMecanico($id, $idMecanico);
       }
-
-      $mecanicos = $this->model->selectMecanicos();
+      $mecProyecto = $this->model->mecanicosProyecto($id);
+      $mecanicos   = $this->model->selectMecanicos();
 
       $this->view->datos = $mecanicos;
+      $this->view->mecanicos = $mecProyecto;
       $this->view->id = $id;
       $this->view->render('servicios/detalleMecanicos');
     }

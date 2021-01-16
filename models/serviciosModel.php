@@ -65,4 +65,21 @@ class serviciosModel extends Model_{
 
       echo $id." ".$idRefaccion;
     }
+
+    public function mecanicosProyecto($id){
+        $items = [];
+        $query = $this->db->connect()->prepare("SELECT e.ID_Empleado, CONCAT(e.Nombre, ' ', e.Apellidos) nombre, e.Puesto FROM Mecanicos_Proyecto mp 
+        JOIN Empleado e 
+        ON mp.FK_Mecanico = e.ID_Empleado  
+        WHERE mp.FK_Reparacion = :id");
+        $query->execute(['id'=>$id]);
+        while($row = $query->fetch()){
+          $item = new Empleado();
+          $item->id = $row['ID_Empleado'];
+          $item->nombre = $row['nombre'];
+          $item->puesto = $row['Puesto'];
+          array_push($items, $item);
+        }
+        return $items;
+    }
 }

@@ -39,6 +39,7 @@
               <td>
                 <a href="<?php echo constant('URL')."/empleados/eliminarEmpleado/".$empleado->id;?>">eliminar</a>
               </td>
+            </tr>
           <?php } ?>
     </tbody>
   </table>
