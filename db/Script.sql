@@ -49,7 +49,7 @@ CREATE TABLE Empleado(
 	Apellido varchar(255) NOT NULL,
 	Usuario varchar(255) NOT NULL UNIQUE,
 	Contrasena varchar(255) NOT NULL,
-	Correo varchar(255) NOT NULL UNIQUE;
+	Correo varchar(255) NOT NULL UNIQUE,
 	Dirección varchar(255),
 	Teléfono varchar(20),
 	Libre Bool DEFAULT TRUE,
