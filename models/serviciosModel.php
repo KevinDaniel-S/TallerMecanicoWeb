@@ -29,11 +29,32 @@ class serviciosModel extends Model_{
         return $items;
     }
 
-    public function release($id){
-        //$query = $this->db->connect()->prepare("UPDATE Reparacion SET Estado = 'Liberado' WHERE ID_Reparacion = :id");
-        //$query->execute(['id' => $id]);
-        echo "release ".$id;
-
+    public function release($id, $totals){
+      $totalMec = $totals['totalMec'];
+      $totalRef = $totals['totalRef'];
+      $total    = $totals['total'];
+      //Actualizar Reparacion
+      $query  = $this->db->connect()->prepare("UPDATE Reparacion 
+                                               SET Estado = 'Liberado',
+                                                   Fecha_Salida = NOW()        
+                                              WHERE ID_Reparacion = :id");
+      $query->execute(['id' => $id]);
+      //Actualizar Empleados
+      $query1 = $this->db->connect()->prepare("UPDATE Empleado
+                                               SET Estado = 'Libre'
+                                               WHERE ID_Empleado IN (
+                                                    SELECT mp.ID_Mecanicos 
+                                                    FROM Mecanicos_Proyecto mp 
+                                                    WHERE mp.FK_Reparacion = :id)");
+      $query1->execute(['id' => $id]);
+      //Crear factura
+      $query2 = $this->db->connect()->prepare("INSERT INTO Factura 
+                                                  (ID_Reparacion, Total_Refacciones, Total_Mano_obra, Total)
+                                                  VALUES (:id, :totalRef, :totalMec, :total)");
+      $query2->execute(['id' => $id,
+                        'totalRef'=> $totalRef,
+                        'totalMec'=> $totalMec,
+                        'total'=>$total]);
     }
     
     public function selectMecanicos(){

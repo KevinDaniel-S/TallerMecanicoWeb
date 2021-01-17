@@ -95,5 +95,19 @@
       </div>
     </div>
   </div>
+<form action="<?php echo constant('URL'); ?>/servicios" method="POST">
+
+  <input type="text" id="id" name="id" hidden="True"
+          value="<?php echo $this->id; ?>">
+  <input type="text" id="totalRef" name="totalRef" hidden="True"
+          value="<?php echo $totalRef ?>">
+  <input type="text" id="totalMec" name="totalMec" hidden="True"
+          value="<?php echo $totalMec ?>">
+  <input type="text" id="total" name="total" hidden="True"
+          value="<?php echo $totalMec+$totalRef; ?>">
+
+<input class="btn btn-primary btn-lg" type="submit" value="Liberar servicio">
+</form>
+
 </div>
 <?php include_once 'views/footer.php'; ?> 

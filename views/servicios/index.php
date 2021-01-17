@@ -2,8 +2,9 @@
 
 <h1> Modificar Servicio </h1>
 
+<h3>
 <div class="text-center text-danger"><?php echo $this->mensaje; ?></div>
-
+</h3>
 <table class="table table-hover table-striped table-bordered">
     <thead class="thead-dark">
         <tr>
