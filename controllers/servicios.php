@@ -52,9 +52,11 @@ class servicios extends Controller_{
 
     public function liberarServicio($param){
         $id = $param[0];
-        $this->model->release($id);
+        //$this->model->release($id);
         $this->view->id = $id;
-        $this->render('servicios/index');
+        $servicio = $this->model->detalleServicio($id);
+        $this->view->servicio = $servicio;
+        $this->view->render('servicios/detalleLiberacion');
     }
 
 }

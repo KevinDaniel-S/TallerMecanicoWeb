@@ -1,8 +1,7 @@
 <?php include_once 'views/header.php'; ?>
 <?php include_once 'models/empleado.php'; ?>
 <div class="d-flex justify-content-center">
-    <h2>Mecánicos del servicio <?php echo $this->id; ?></h2>
-    
+    <h2>Mecánicos del servicio <?php echo $this->id; ?></h2> 
 </div>
 
 <div class="container">

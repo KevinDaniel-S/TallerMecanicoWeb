@@ -119,4 +119,18 @@ class serviciosModel extends Model_{
         }
         return $items;
     }
+    public function detalleServicio($id){
+      $query = $this->db->connect()->prepare("SELECT r.ID_Reparacion, r.Fecha_Entrada, r.Fecha_Salida, 
+		                                     v.Matricula, v.Modelo, v.Color,
+		                                     c.Nombre, c.Apellido
+                                              FROM Reparacion r
+                                                INNER JOIN Vehiculo v 
+    		                                  ON v.Matricula = r.FK_Matricula
+	                                        INNER JOIN Cliente c
+                                                  ON v.FK_DNI = c.DNI
+                                              WHERE r.ID_Reparacion = :id;");
+      $query->execute(['id'=>$id]);
+      $row = $query->fetch();
+      return $row;
+    }
 }
