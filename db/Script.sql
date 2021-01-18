@@ -2,8 +2,8 @@ CREATE TABLE Cliente (
 	DNI varchar(50) NOT NULL,
 	Nombre varchar(255) NOT NULL,
 	Apellidos varchar(255) NOT NULL,
-	Dirección varchar(255),
-	Teléfono varchar(20),
+	Direccion varchar(255),
+	Telefono varchar(20),
 	PRIMARY KEY (DNI),
 	UNIQUE INDEX (Apellidos, Nombre)
 );
@@ -46,12 +46,12 @@ CREATE TABLE Hoja_Parte(
 CREATE TABLE Empleado(
 	ID_Empleado INT AUTO_INCREMENT,
 	Nombre varchar(255) NOT NULL,
-	Apellido varchar(255) NOT NULL,
+	Apellidos varchar(255) NOT NULL,
 	Usuario varchar(255) NOT NULL UNIQUE,
 	Contrasena varchar(255) NOT NULL,
 	Correo varchar(255) NOT NULL UNIQUE,
-	Dirección varchar(255),
-	Teléfono varchar(20),
+	Direccion varchar(255),
+	Telefono varchar(20),
 	Estado varchar(20),
 	Puesto varchar(20),
 	PRIMARY KEY (ID_Empleado),
