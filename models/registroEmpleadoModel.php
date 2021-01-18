@@ -7,8 +7,13 @@ class registroEmpleadoModel extends Model_{
     }
     
     public function insert($datos){
-      $query = $this->db->connect()->prepare('INSERT INTO Empleado (Nombre, Apellidos, Direccion, Telefono, Puesto, Correo, Contrasena) 
-                                              VALUES (:Nombre, :Apellidos, :Direccion, :Telefono, :Puesto, :Correo, :Pass)');
+      if($datos['puesto']=='Administrativo'){
+        $Estado = 'Ocupado';
+      } else {
+        $Estado = 'Libre'
+      }
+      $query = $this->db->connect()->prepare('INSERT INTO Empleado (Nombre, Apellidos, Direccion, Telefono, Puesto, Correo, Contrasena :Estado) 
+                                              VALUES (:Nombre, :Apellidos, :Direccion, :Telefono, :Puesto, :Correo, :Pass, :Estado)');
         $query->execute(['Nombre'=>$datos['nombre'],
                          'Apellidos'=>$datos['apellidos'], 
                          'Direccion'=>$datos['direccion'],

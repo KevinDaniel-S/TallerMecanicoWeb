@@ -31,7 +31,7 @@ class empleadosModel extends Model_{
     public function selectById($id){
         $item = new Empleado;
 
-        $query = $this->db->connect()->prepare("SELECT ID_Empleado, Nombre, Apellidos, Direccion, Telefono, Libre, Puesto, Correo FROM Empleado WHERE ID_Empleado=:id");
+        $query = $this->db->connect()->prepare("SELECT ID_Empleado, Nombre, Apellidos, Direccion, Telefono, Estado, Puesto, Correo FROM Empleado WHERE ID_Empleado=:id");
         $query->execute(['id'=>$id]);
         while($row = $query->fetch()){
             $item->id = $row['ID_Empleado'];
@@ -40,7 +40,7 @@ class empleadosModel extends Model_{
             $item->direccion = $row['Direccion'];
             $item->email = $row['Correo'];
             $item->telefono = $row['Telefono'];
-            $item->libre = $row['Libre'];
+            $item->libre = $row['Estado'];
             $item->puesto = $row['Puesto'];
         }
         return $item;
