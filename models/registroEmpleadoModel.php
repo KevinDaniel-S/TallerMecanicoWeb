@@ -8,9 +8,9 @@ class registroEmpleadoModel extends Model_{
     
     public function insert($datos){
       if($datos['puesto']=='Administrativo'){
-        $Estado = 'Ocupado';
+        $estado = 'Ocupado';
       } else {
-        $Estado = 'Libre'
+        $estado = 'Libre';
       }
       $query = $this->db->connect()->prepare('INSERT INTO Empleado (Nombre, Apellidos, Direccion, Telefono, Puesto, Correo, Contrasena :Estado) 
                                               VALUES (:Nombre, :Apellidos, :Direccion, :Telefono, :Puesto, :Correo, :Pass, :Estado)');
@@ -20,6 +20,7 @@ class registroEmpleadoModel extends Model_{
                          'Telefono'=>$datos['telefono'],
                          'Puesto'=>$datos['puesto'],
                          'Correo'=>$datos['email'],
-                         'Pass'=>substr($datos['nombre'], 0, 3).substr($datos['telefono'], -4)]);
+                         'Pass'=>substr($datos['nombre'], 0, 3).substr($datos['telefono'], -4),
+                         'Estado'=>$estado]);
     }
 }
