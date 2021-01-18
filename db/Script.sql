@@ -1,11 +1,11 @@
 CREATE TABLE Cliente (
 	DNI varchar(50) NOT NULL,
 	Nombre varchar(255) NOT NULL,
-	Apellido varchar(255) NOT NULL,
+	Apellidos varchar(255) NOT NULL,
 	Dirección varchar(255),
 	Teléfono varchar(20),
 	PRIMARY KEY (DNI),
-	UNIQUE INDEX (Apellido, Nombre)
+	UNIQUE INDEX (Apellidos, Nombre)
 );
 
 CREATE TABLE Vehiculo (
@@ -52,7 +52,7 @@ CREATE TABLE Empleado(
 	Correo varchar(255) NOT NULL UNIQUE,
 	Dirección varchar(255),
 	Teléfono varchar(20),
-	Libre varchar(20),
+	Estado varchar(20),
 	Puesto varchar(20),
 	PRIMARY KEY (ID_Empleado),
 	UNIQUE INDEX (Apellido, Nombre)
