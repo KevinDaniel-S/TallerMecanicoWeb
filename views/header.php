@@ -4,8 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taller</title>
     <link rel="text/html" href="<?php echo constant('URL')?>/assets/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="<?php echo constant('URL')?>/assets/favicon.ico" type="image/x-icon">
-<script src="<?php echo constant('URL')?>/assets/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" 
+          href="<?php echo constant('URL')?>/assets/favicon.ico" 
+          type="image/x-icon">
 </head>
 <body>
 
