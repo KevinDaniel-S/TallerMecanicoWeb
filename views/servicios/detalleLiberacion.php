@@ -1,4 +1,6 @@
 <?php include_once 'views/header.php'; ?>
+<?php require_once 'views/navbar.php'; ?>
+
 <?php $totalMec = 0; ?>
 <?php $totalRef = 0; ?>
 <div class="d-flex justify-content-center">

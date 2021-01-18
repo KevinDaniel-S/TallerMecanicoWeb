@@ -1,4 +1,5 @@
 <?php require_once 'views/header.php'; ?>
+<?php require_once 'views/navbar.php'; ?>
 
 <h1>Registrar nuevo cliente</h1>
 

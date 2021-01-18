@@ -1,4 +1,5 @@
 <?php include_once 'views/header.php'; ?>
+<?php require_once 'views/navbar.php'; ?>
 <?php include_once 'models/refaccion.php'; ?>
 
 <div class="d-flex justify-content-center">

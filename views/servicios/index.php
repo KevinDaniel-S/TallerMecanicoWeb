@@ -1,4 +1,5 @@
 <?php include_once('views/header.php'); ?>
+<?php require_once 'views/navbar.php'; ?>
 
 <h1> Modificar Servicio </h1>
 
