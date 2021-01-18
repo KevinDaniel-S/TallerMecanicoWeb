@@ -12,7 +12,7 @@ class registroEmpleadoModel extends Model_{
       } else {
         $estado = 'Libre';
       }
-      $query = $this->db->connect()->prepare('INSERT INTO Empleado (Nombre, Apellidos, Direccion, Telefono, Puesto, Correo, Contrasena :Estado) 
+      $query = $this->db->connect()->prepare('INSERT INTO Empleado (Nombre, Apellidos, Direccion, Telefono, Puesto, Correo, Contrasena, Estado) 
                                               VALUES (:Nombre, :Apellidos, :Direccion, :Telefono, :Puesto, :Correo, :Pass, :Estado)');
         $query->execute(['Nombre'=>$datos['nombre'],
                          'Apellidos'=>$datos['apellidos'], 
