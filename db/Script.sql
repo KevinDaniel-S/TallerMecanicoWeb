@@ -52,7 +52,7 @@ CREATE TABLE Empleado(
 	Correo varchar(255) NOT NULL UNIQUE,
 	Dirección varchar(255),
 	Teléfono varchar(20),
-	Libre Bool DEFAULT TRUE,
+	Libre varchar(20),
 	Puesto varchar(20),
 	PRIMARY KEY (ID_Empleado),
 	UNIQUE INDEX (Apellido, Nombre)
