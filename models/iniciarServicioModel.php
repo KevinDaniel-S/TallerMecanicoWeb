@@ -12,7 +12,7 @@ class iniciarServicioModel extends Model_{
     function select(){
         $items = [];
 
-        $query = $this->db->connect()->query("SELECT v.Matricula, v.Color, v.Modelo, CONCAT(c.Nombre, ' ', c.Apellido) Propietario FROM Vehiculo v INNER JOIN Cliente c	ON v.FK_DNI=c.DNI WHERE v.Matricula NOT IN (SELECT r.FK_Matricula FROM  Reparacion r WHERE Estado='Activo');");
+        $query = $this->db->connect()->query("SELECT v.Matricula, v.Color, v.Modelo, CONCAT(c.Nombre, ' ', c.Apellido) Propietario FROM Vehiculo v INNER JOIN Cliente c	ON v.FK_DNI=c.DNI WHERE v.Matricula NOT IN (SELECT r.FK_Matricula FROM  Reparacion r WHERE r.Estado='Activo');");
         while($row = $query->fetch()){
             $item = new Servicio();
             $item->matricula = $row['Matricula'];

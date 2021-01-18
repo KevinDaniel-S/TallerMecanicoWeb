@@ -14,7 +14,7 @@ class serviciosModel extends Model_{
     public function select(){
         $items = [];
 
-        $query = $this->db->connect()->query("SELECT r.ID_Reparacion, CONCAT(c.Nombre, ' ' ,c.Apellido) as Propietario, v.Matricula, v.Modelo, v.Color, r.Fecha_Entrada FROM Reparacion r LEFT JOIN Vehiculo v ON r.FK_Matricula = v.Matricula LEFT JOIN Cliente c ON c.DNI = v.FK_DNI WHERE Estado='Activo'");
+        $query = $this->db->connect()->query("SELECT r.ID_Reparacion, CONCAT(c.Nombre, ' ' ,c.Apellido) as Propietario, v.Matricula, v.Modelo, v.Color, r.Fecha_Entrada FROM Reparacion r LEFT JOIN Vehiculo v ON r.FK_Matricula = v.Matricula LEFT JOIN Cliente c ON c.DNI = v.FK_DNI WHERE r.Estado='Activo'");
         while($row = $query->fetch()){
             $item = new Servicio();
             $item->id = $row['ID_Reparacion'];
