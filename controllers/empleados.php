@@ -8,7 +8,11 @@ class Empleados extends Controller_{
     }
 
     function render(){
+      try{
         $empleados = $this->model->select();
+      } catch (Exception $e){
+        $this->view->mensaje = $e->getMessage();
+      }
         $this->view->datos = $empleados;
         $this->view->render('empleados/index');
     }
