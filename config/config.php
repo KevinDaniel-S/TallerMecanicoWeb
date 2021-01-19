@@ -1,6 +1,6 @@
 <?php
-define('URL', 'https://pure-sierra-09569.herokuapp.com');
-//define('URL', 'http://localhost:8000');
+//define('URL', 'https://pure-sierra-09569.herokuapp.com');
+define('URL', 'http://localhost:8000');
 define('PAR', 0);
 define('HOST', 'bel0hfobhlyyfehoo3uc-mysql.services.clever-cloud.com');
 define('DB', 'bel0hfobhlyyfehoo3uc');
