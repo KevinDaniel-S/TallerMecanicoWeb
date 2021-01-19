@@ -1,0 +1,64 @@
+{
+  "sites":[
+    {
+    "site"  : "login",
+    "access": "public",
+    "role"  : [""]
+    },
+    {
+    "site"  : "",
+    "access": "private",
+    "role"  : ["Jefe mecanico","Ayudante"]
+    },
+    {
+    "site"  : "nuevoCliente",
+    "access": "private",
+    "role"  : ["Jefe mecanico","Ayudante"]
+    },
+    {
+    "site"  : "registroVehiculo",
+    "access": "private",
+    "role"  : ["Jefe mecanico","Ayudante"]
+    },
+    {
+    "site"  : "iniciarServicio",
+    "access": "private",
+    "role"  : ["Jefe mecanico"]
+    },
+    {
+    "site"  : "servicio",
+    "access": "private",
+    "role"  : ["Jefe mecanico"]
+    },
+    {
+    "site"  : "admin",
+    "access": "private",
+    "role"  : ["Administrativo"]
+    },
+    {
+    "site"  : "registroEmpleado",
+    "access": "private",
+    "role"  : ["Administrativo"]
+    },
+    {
+    "site"  : "empleados",
+    "access": "private",
+    "role"  : ["Administrativo"]
+    },
+    {
+    "site"  : "registroProducto",
+    "access": "private",
+    "role"  : ["Administrativo"]
+    },
+    {
+    "site"  : "inventario",
+    "access": "private",
+    "role"  : ["Administrativo"]
+    }
+
+
+
+
+  ]
+
+}
