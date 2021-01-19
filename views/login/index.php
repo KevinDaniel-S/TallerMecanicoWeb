@@ -3,6 +3,7 @@
 <div class="sidenav">
   <div class="login-main-text">
     <h1>Taller</h1>
+    
     <br>
     <h2>Página de inicio de sesión</h2>
     <p>Inicia sesión para acceder al sistema</p>
@@ -14,14 +15,15 @@
   <div class="col-md-6 col-sm-12">
     <div class="login-form">
       <form method="POST">
+<?php echo $this->mensaje; ?>
         <div class="form-group">
-          <label>Usario</label>
-          <input type="text" class="form-control" 
+          <label>Usuario</label>
+          <input type="text" class="form-control" name="user" 
             placeholder="Usuario" required>
         </div>
         <div class="form-group">
           <label>Contraseña</label>
-          <input type="password" class="form-control" 
+          <input type="password" class="form-control" name="password"
             placeholder="Contraseña" required>
         </div>
         <button type="submit" class="btn btn-primary">Iniciar sesión</button>

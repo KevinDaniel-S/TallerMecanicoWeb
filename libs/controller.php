@@ -13,7 +13,10 @@ class Controller_{
             $modelName = $model.'Model';
             $this->model = new $modelName();
         }
+    }
 
+    function redirect($route){
+      header('Location: ' . constant('URL') . $route);
     }
 }
 
