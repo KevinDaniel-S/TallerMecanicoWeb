@@ -15,7 +15,7 @@
   <div class="col-md-6 col-sm-12">
     <div class="login-form">
       <form method="POST">
-<?php echo $this->mensaje; ?>
+        <div class="text-center text-danger"><?php echo $this->mensaje; ?></div>
         <div class="form-group">
           <label>Usuario</label>
           <input type="text" class="form-control" name="user" 
