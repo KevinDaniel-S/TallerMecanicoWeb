@@ -43,7 +43,7 @@ class serviciosModel extends Model_{
       $query1 = $this->db->connect()->prepare("UPDATE Empleado
                                                SET Estado = 'Libre'
                                                WHERE ID_Empleado IN (
-                                                    SELECT mp.ID_Mecanicos 
+                                                    SELECT mp.FK_Mecanico 
                                                     FROM Mecanicos_Proyecto mp 
                                                     WHERE mp.FK_Reparacion = :id)");
       $query1->execute(['id' => $id]);

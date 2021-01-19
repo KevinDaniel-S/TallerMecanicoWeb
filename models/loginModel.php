@@ -6,6 +6,8 @@ class loginModel extends Model_{
         parent::__construct();
     }
 
-
+    public function verify($user, $pass){
+      return $user.' '.$pass;
+    }
 }
 ?>

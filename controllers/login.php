@@ -6,13 +6,17 @@ class Login extends Controller_{
     parent::__construct();
     $this->view->mensaje = "";
     $this->view->datos = [];
-    if(isset($_POST['user'])){
-      $this->view->mensaje = $_POST['user'] . $_POST['password'];
-      parent::redirect('/');
-    }
+
   }
 
   function render(){
+    if(isset($_POST['user'])){
+      $user = $_POST['user'];
+      $pass = $_POST['password'];
+      $response = $this->model->verify($user, $pass);
+      $this->view->mensaje = $response;
+      //parent::redirect('/');
+    }
     $this->view->render('login/index');
   }
 }
