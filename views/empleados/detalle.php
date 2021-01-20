@@ -41,9 +41,13 @@
       <option value="<?php echo $this->empleado->puesto;?>">
         <?php echo $this->empleado->puesto;?>
       </option>
-      <option value="Administrativo">Administrativo</option>
-      <option value="Ayudante">Ayudante mecánico</option>
-      <option value="Jefe mecanico">Jefe mecánico</option>
+      <?php if($this->empleado->puesto!="Administrativo"){ 
+        if($this->empleado->puesto=="Jefe mecanico"){ 
+          echo  "<option value='Ayudante'>Ayudante mecánico</option>";
+        } else { 
+          echo "<option value='Jefe mecanico'>Jefe mecánico</option>";
+        }
+      }?>
     </select>
   </div>
   <button type="submit" class="btn btn-primary">Actualizar empleado</button>
