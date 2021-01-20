@@ -11,7 +11,7 @@ class empleadosModel extends Model_{
     public function select(){
         $items = [];
 
-        $query = $this->db->connect()->query('SELECT ID_Empleado, Nombre, Apellidos, Direccion, Telefono, Estado, Puesto, Correo FROM Empleado');
+        $query = $this->db->connect()->query('SELECT ID_Empleado, Nombre, Apellidos, Direccion, Telefono, Estado, Puesto, Correo FROM Empleado WHERE Estado!="Despedido"');
         while($row = $query->fetch()){
             $item = new Empleado();
             $item->id = $row['ID_Empleado'];
@@ -58,7 +58,7 @@ class empleadosModel extends Model_{
     }
 
     public function delete($id){
-        $query = $this->db->connect()->prepare("DELETE FROM Empleado WHERE ID_Empleado = :id");
+        $query = $this->db->connect()->prepare("UPDATE Empleado SET Estado = 'Despedido' WHERE ID_Empleado = :id");
         $query->execute(['id'=>$id]);
     }
 }
