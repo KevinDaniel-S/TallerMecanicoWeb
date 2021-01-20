@@ -1,8 +1,10 @@
 <?php require_once 'views/header.php';?>
 <?php require_once 'views/navbar.php'; ?>
 
-<h1>Esta es la página principal</h1>
+<h1>Bienvenido al taller <?php echo $_SESSION['nombre']; ?></h1>
+  <h2>Puesto: <?php echo $_SESSION['puesto']; ?></h2>
 
-El botón de *Ir a admin* es es un placeholder hasta que los roles estén creados
+
+
 
 <?php require_once 'views/footer.php';?>

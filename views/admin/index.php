@@ -1,5 +1,5 @@
 <?php require_once 'views/admHeader.php';?>
 
-<h1>Pántalla de admin</h1>
+<h1>Bienvenido a administración <?php echo $_SESSION['nombre']; ?></h1>
 
 <?php require_once 'views/footer.php';?>
