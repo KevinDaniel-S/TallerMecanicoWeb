@@ -15,6 +15,9 @@
     <li class="nav-item active">
       <a class="nav-link" href="<?php echo constant('URL')?>/servicios">Servicios</a>
     </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<?php echo constant('URL')?>/logout">Cerrar sesión</a>
+    </li>
   </ul>
 </nav>
 <div style="padding:5% 7%">

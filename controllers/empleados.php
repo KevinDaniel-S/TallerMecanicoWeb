@@ -1,6 +1,6 @@
 <?php
 
-class Empleados extends Controller_{
+class Empleados extends SessionController{
     function __construct(){
         parent::__construct();
         $this->view->mensaje = "";

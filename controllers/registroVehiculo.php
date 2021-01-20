@@ -1,6 +1,6 @@
 <?php 
 
-class registroVehiculo extends Controller_{
+class registroVehiculo extends SessionController{
     function __construct(){
         parent::__construct();
         $this->view->mensaje = "";

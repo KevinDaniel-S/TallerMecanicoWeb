@@ -1,7 +1,7 @@
 {
   "sites":[
     {
-    "site"  : "login",
+    "site"  : "/login",
     "access": "public",
     "role"  : [""]
     },
@@ -26,7 +26,7 @@
     "role"  : ["Jefe mecanico"]
     },
     {
-    "site"  : "servicio",
+    "site"  : "servicios",
     "access": "private",
     "role"  : ["Jefe mecanico"]
     },
@@ -55,10 +55,12 @@
     "access": "private",
     "role"  : ["Administrativo"]
     }
-
-
-
-
+  ],
+  "default-sites":[
+    {
+      "Administrativo": "/admin",
+      "Ayudante": "/",
+      "Jefe Mecanico": "/"
+    }
   ]
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Main extends Controller_{
+class Main extends SessionController{
     function __construct(){
         parent::__construct();
         

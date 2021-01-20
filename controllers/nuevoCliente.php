@@ -1,6 +1,6 @@
 <?php
 
-class nuevoCliente extends Controller_{
+class nuevoCliente extends SessionController{
     function __construct(){
         parent::__construct();
         $this->view->mensaje = "";

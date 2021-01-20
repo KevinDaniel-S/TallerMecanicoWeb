@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 class Login extends Controller_{
 
@@ -20,6 +21,9 @@ class Login extends Controller_{
       }
       if($response){
         $puesto = $response['Puesto'];
+        $_SESSION['id'] = $response['ID_Empleado'];
+        $_SESSION['puesto'] = $puesto;
+        $_SESSION['nombre'] = $response['Nombre'].' '.$response['Apellidos'];
         if($puesto != 'Administrativo'){
           parent::redirect('/');
         }else{

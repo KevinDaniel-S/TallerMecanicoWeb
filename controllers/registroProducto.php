@@ -1,6 +1,6 @@
 <?php
 
-class RegistroProducto extends Controller_{
+class RegistroProducto extends SessionController{
     function __construct(){
         parent::__construct();
         $this->view->mensaje = "";

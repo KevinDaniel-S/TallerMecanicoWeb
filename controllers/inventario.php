@@ -1,6 +1,6 @@
 <?php
 
-class Inventario extends Controller_{
+class Inventario extends SessionController{
     function __construct(){
         parent::__construct();
         $this->view->mensaje = "";

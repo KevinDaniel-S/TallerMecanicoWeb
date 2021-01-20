@@ -1,6 +1,6 @@
 <?php
 
-class Admin extends Controller_{
+class Admin extends SessionController{
     function __construct(){
         parent::__construct();
     }

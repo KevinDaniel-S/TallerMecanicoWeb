@@ -1,6 +1,6 @@
 <?php
 
-class servicios extends Controller_{
+class servicios extends SessionController{
     function __construct(){
         parent::__construct();
         $this->view->mensaje = "";
