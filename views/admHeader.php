@@ -12,12 +12,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="<?php echo constant('URL')?>/">Ir a Taller</a>
+      <a class="navbar-brand" href="<?php echo constant('URL')?>/admin">Admin</a>
     </div>
-    <ul class="navbar-nav">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="<?php echo constant('URL')?>/registroEmpleado">Registro empleado</a>
         </li>
@@ -30,9 +30,14 @@
         <li class="nav-item active">
           <a class="nav-link" href="<?php echo constant('URL')?>/inventario">Inventario</a>
         </li>
+      </ul>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
           <a class="nav-link" href="<?php echo constant('URL')?>/logout">Cerrar sesión</a>
         </li>
-    </ul>
+      </ul>
+    </div>
 </nav>
 <div style="padding:5% 7%">
