@@ -17,13 +17,13 @@ class RegistroProducto extends SessionController{
 
       $Precio = $_POST['Precio'];
 
-        try {
-            $this->model->insert(['Nombre' => $Nombre, 'Precio' => $Precio]);
-            $this->view->mensaje = "Refacción agregada correctamente";
-        } catch (Exception $e) {
-            $this->view->mensaje = $e->getMessage();
-        }
-
-        $this->render();
+      try {
+        $this->model->insert(['Nombre' => $Nombre, 'Precio' => $Precio]);
+        $this->view->mensaje = "Refacción agregada correctamente";
+        parent::redirect('/inventario');
+      } catch (Exception $e) {
+        $this->view->mensaje = $e->getMessage();
+      }
+      $this->render();
     }
 }

@@ -21,6 +21,6 @@ class iniciarServicio extends SessionController{
         $id = $param[0];
         $this->model->start($id);
 
-        $this->render();
+        parent::redirect('/servicios');
     }
 }

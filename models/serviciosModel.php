@@ -102,7 +102,6 @@ class serviciosModel extends Model_{
       $query->execute(['id'=>$id,
                        'idRefaccion'=>$idRefaccion,
                        'cantidad'=>$cantidad]);
-      echo $id." ".$idRefaccion." ".$cantidad;
     }
 
     public function mecanicosProyecto($id){

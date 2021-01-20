@@ -27,13 +27,12 @@ class nuevoCliente extends SessionController{
         try{$this->model->insert(['DNI'=>$DNI, 'Nombre'=>$Nombre,
                 'Apellido'=>$Apellido, 'Direccion'=>$Direccion,
                 'Telefono'=>$Telefono]);
-            $this->view->mensaje = "Cliente agregado correctamente";
+        $this->view->mensaje = "Cliente agregado correctamente";
+        parent::redirect('/registroVehiculo');
         }
         catch(Exception $e){
             $this->view->mensaje = $e->getMessage();
-        }
-
-        
+        } 
         $this->render();
     }
 

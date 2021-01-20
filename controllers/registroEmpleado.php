@@ -32,6 +32,7 @@ class RegistroEmpleado extends SessionController{
                                   'email'=>$email,
                                   'puesto'=>$puesto]);
             $this->view->mensaje="El empleado ha sido ingresado satisfactoriamente";
+            parent::redirect('/empleados');
         } catch (PDOException $e) {
             $this->view->mensaje = $e->getMessage();
         }

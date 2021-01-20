@@ -23,6 +23,11 @@ class registroVehiculo extends SessionController{
             $this->model->insert(['Cliente' => $Cliente, 'Matricula' => $Matricula,
                                   'Modelo' => $Modelo, 'Color' => $Color]);
             $this->view->mensaje = "Vehículo agregado correctamente";
+            if($_SESSION['puesto']=='Ayudante'){
+              parent::redirect('/');
+            } else {
+              parent::redirect('/iniciarServicio');
+            }
         } catch (Exception $e) {
             $this->view->mensaje = $e->getMessage();
         }
