@@ -12,8 +12,15 @@ class nuevoCliente extends SessionController{
 
     function registrar(){
         $DNI = $_POST['DNI'];
+        
         $Nombre = $_POST['Nombre'];
+        $Nombre = strtolower($Nombre);
+        $Nombre = ucfirst($Nombre);
+
         $Apellido = $_POST['Apellido'];
+        $Apellido = strtolower($Apellido);
+        $Apellido = ucfirst($Apellido);
+
         $Direccion = $_POST['Direccion'];
         $Telefono = $_POST['Telefono'];
 

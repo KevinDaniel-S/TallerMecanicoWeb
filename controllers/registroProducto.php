@@ -11,8 +11,11 @@ class RegistroProducto extends SessionController{
     }
 
     function registrar(){
-        $Nombre = $_POST['Nombre'];
-        $Precio = $_POST['Precio'];
+      $Nombre = $_POST['Nombre'];
+      $Nombre = strtolower($Nombre);
+      $Nombre = ucfirst($Nombre);
+
+      $Precio = $_POST['Precio'];
 
         try {
             $this->model->insert(['Nombre' => $Nombre, 'Precio' => $Precio]);
