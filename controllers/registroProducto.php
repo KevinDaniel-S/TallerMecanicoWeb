@@ -13,7 +13,7 @@ class RegistroProducto extends SessionController{
     function registrar(){
       $Nombre = $_POST['Nombre'];
       $Nombre = strtolower($Nombre);
-      $Nombre = ucfirst($Nombre);
+      $Nombre = ucwords($Nombre);
 
       $Precio = $_POST['Precio'];
 

@@ -15,11 +15,11 @@ class nuevoCliente extends SessionController{
         
         $Nombre = $_POST['Nombre'];
         $Nombre = strtolower($Nombre);
-        $Nombre = ucfirst($Nombre);
+        $Nombre = ucwords($Nombre);
 
         $Apellido = $_POST['Apellido'];
         $Apellido = strtolower($Apellido);
-        $Apellido = ucfirst($Apellido);
+        $Apellido = ucwords($Apellido);
 
         $Direccion = $_POST['Direccion'];
         $Telefono = $_POST['Telefono'];

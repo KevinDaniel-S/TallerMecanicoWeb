@@ -13,11 +13,11 @@ class RegistroEmpleado extends SessionController{
     function registrar(){
         $nombre = $_POST['nombre'];
         $nombre = strtolower($nombre);
-        $nombre = ucfirst($nombre);
+        $nombre = ucwords($nombre);
 
         $apellidos = $_POST['apellidos'];
         $apellidos = strtolower($apellidos);
-        $apellidos = ucfirst($apellidos);
+        $apellidos = ucwords($apellidos);
 
         $direccion = $_POST['direccion'];
         $telefono = $_POST['telefono'];
