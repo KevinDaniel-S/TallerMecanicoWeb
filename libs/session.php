@@ -15,7 +15,7 @@ class Session{
   }
 
   public function getCurrentUser($user){
-    return $_SESSION[$this->sessionName];
+    return $_SESSION['nombre'];
   }
 
   public function closeSession(){
@@ -24,7 +24,8 @@ class Session{
   }
 
   public function exists(){
-    return isset($_SESSION[$this->sessionName]);
+    return isset($_SESSION['puesto']);
+
   }
 }
 
