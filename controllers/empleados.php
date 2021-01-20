@@ -65,13 +65,17 @@ class Empleados extends SessionController{
     }
 
     function eliminarEmpleado($param = null){
-        $id = $param[0];
+      $id = $param[0];
+      if($id != $_SESSION['id']){
         try {
             $this->model->delete($id);
             $this->view->mensaje = "Empleado eliminado correctamente";
         } catch (Exception $e) {
             $this->view->mensaje = $e->getMessage();
         }
+      } else {
+        $this->view->mensaje = "No puedes eliminarte a ti mismo";
+      }
         $this->render();
     }
 }
