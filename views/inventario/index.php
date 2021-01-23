@@ -11,7 +11,7 @@
         <th>Nombre</th>
         <th>Precio</th>
         <th></th>
-        <th></th>
+        <!--th></th-->
       </tr>
     </thead>
     <tbody>
@@ -28,9 +28,9 @@
               <td>
                 <a href="<?php echo constant('URL')."/inventario/verProducto/".$producto->id;?>">editar</a>
               </td>
-              <td>
-                <a href="<?php echo constant('URL')."/inventario/eliminarProducto/".$producto->id;?>">eliminar</a>
-              </td>
+<!--              <td>
+                <a href="<!?php echo constant('URL')."/inventario/eliminarProducto/".$producto->id;?>">eliminar</a>
+              </td>-->
             </tr>
           <?php } ?>
     </tbody>
